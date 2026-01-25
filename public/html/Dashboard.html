@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+    <form class="search-form">
+        <input type="search" placeholder="Search events">
+        <button type="submit">Search</button>
+    </form>
+
+    <div class="nav-right">
+        <img src="../icon/bell.png"
+             class="icon"
+             onclick="location.href='notification.html'">
+
+        <button class="add-btn" onclick="location.href='profile.html'">
+            Profile
+            <img src="../icon/profile.png"
+                 class="profile-img">
+        </button>
+    </div>
+</header>
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar">
+    <h2>Menu</h2>
+    <ul>
+        <li class="active" onclick="location.href='dashboard.html'">
+            🏠 Dashboard
+        </li>
+
+        <li onclick="location.href='create.html'">
+            ➕ Create Event
+        </li>
+
+        <li onclick="location.href='my_events.html'">
+            📂 My Events
+        </li>
+        <li onclick="location.href='calender.html'">
+            🗓️ Calendar
+        </li>
+
+        <li onclick="location.href='event_listing.html'">
+            🌍 All Events
+        </li>
+
+        <li onclick="location.href='notification.html'">
+            🔔 Notifications
+        </li>
+
+        <li onclick="location.href='profile.html'">
+            👤 Profile
+        </li>
+
+        <li onclick="location.href='index.html'">
+            🚪 Logout
+        </li>
+    </ul>
+</aside>
+
+<!-- ================= MAIN ================= -->
+<main class="main">
+
+    <!-- ================= STATS ================= -->
+    <section class="categories">
+
+        <div class="category-card">
+            <h3 id="totalEvents">0</h3>
+            <p>Events Created</p>
+        </div>
+
+        <div class="category-card">
+            <h3 id="totalParticipants">0</h3>
+            <p>Total Participants</p>
+        </div>
+
+        <div class="category-card">
+            <h3 id="totalAnnouncements">0</h3>
+            <p>Announcements Sent</p>
+        </div>
+
+    </section>
+    <!-- ================= DASHBOARD CONTENT ================= -->
+
+<section class="dashboard-grid">
+
+    <!-- Recent Events -->
+    <div class="dashboard-box">
+        <h3>Recent Events</h3>
+        <div id="recentEvents"></div>
+    </div>
+
+    <!-- Upcoming Events -->
+    <div class="dashboard-box">
+        <h3>Upcoming Events</h3>
+        <div id="upcomingEvents"></div>
+    </div>
+
+</section>
+
+<section class="dashboard-grid">
+
+    <!-- Recent Participants -->
+    <div class="dashboard-box">
+        <h3>Recent Registrations</h3>
+        <div id="recentParticipants"></div>
+    </div>
+
+    <!-- Latest Announcements -->
+    <div class="dashboard-box">
+        <h3>Latest Announcements</h3>
+        <div id="recentAnnouncements"></div>
+    </div>
+
+</section>
+
+</main>
+
+<script>
+    const currentPage = window.location.pathname.split("/").pop();
+    document.querySelectorAll(".sidebar li").forEach(li => {
+        if (li.getAttribute("onclick")?.includes(currentPage)) {
+            li.classList.add("active");
+        }
+    });
+</script>
+<script src="../js/dashboard.js"></script>
+</body>
+</html>

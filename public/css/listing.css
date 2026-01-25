@@ -1,0 +1,263 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================= BASE ================= */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top, #0f0f0f 0%, #050505 60%, #000 100%);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* ================= LOADER ================= */
+.loader {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+/* ================= HEADER ================= */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+}
+.icon {
+    width: 28px;
+    cursor: pointer;
+}
+span{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.profile-img {
+    height: 18px;
+    margin-left: 6px;
+}
+
+/* ================= SEARCH ================= */
+.search-form {
+    display: flex;
+    gap: 10px;
+    width: 40%;
+}
+
+.search-form input {
+    flex: 1;
+    padding: 10px 16px;
+    font-size: 16px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+
+.search-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #1d1e20;
+    color: #fafafa;
+}
+
+.search-form button:hover {
+    background-color: #ffaa00;
+}
+
+/* ================= BUTTON ================= */
+.add-btn {
+    padding: 10px 22px;
+    background: linear-gradient(90deg, #ffae00, #ff5f00);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ================= HERO ================= */
+.hero {
+    text-align: center;
+    padding-top: 180px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: 64px;
+    font-weight: 700;
+}
+
+.gradient {
+    background: linear-gradient(90deg, #ffaa00, #00ffd5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    margin-top: 18px;
+    font-size: 18px;
+    opacity: 0.7;
+}
+
+/* ================= PROJECTS ================= */
+.section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 80px 40px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(14px);
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: 0.35s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #ffaa00;
+}
+
+
+.card h3 {
+    padding: 18px;
+    font-size: 16px;
+}
+
+/* ================= BLUR BACKGROUND ================= */
+.blur1,
+.blur2 {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    filter: blur(140px);
+    z-index: -1;
+}
+
+.blur1 {
+    background: #ff9900;
+    top: 120px;
+    left: -120px;
+}
+
+.blur2 {
+    background: #00ffd5;
+    bottom: -120px;
+    right: -120px;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    text-align: center;
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    margin-top: 60px;
+    font-size: 14px;
+    opacity: 0.7;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+}
+
+/* ================= ANIMATION ================= */
+.hero,
+.section {
+    animation: fadeUp 1.3s ease forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+    position: fixed;
+    top: 90px;
+    left: 20px;
+    width: 240px;
+    height: calc(100vh - 120px);
+    padding: 22px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.sidebar h2 {
+    font-size: 16px;
+    margin-bottom: 18px;
+    opacity: 0.8;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 11px 14px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    opacity: 0.75;
+    transition: 0.25s;
+}
+
+.sidebar li:hover {
+    background: rgba(255,170,0,0.15);
+    opacity: 1;
+}
+
+.sidebar li.active {
+    background: linear-gradient(90deg, #ffae00, #ff5f00);
+    color: #000;
+    font-weight: 500;
+}
+
+/* ================= MAIN ================= */
+.main {
+    margin-left: 300px;
+}

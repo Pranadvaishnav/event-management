@@ -1,0 +1,350 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================= BASE ================= */
+body {
+    font-family: 'Poppins', sans-serif;
+
+    /* Fixed background */
+    background: radial-gradient(circle at top, #0f0f0f 0%, #050505 60%, #000 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    color: white;
+
+    /* Enable scrolling for content */
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+/* ================= HEADER ================= */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* ================= NAV ================= */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-right a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 0.75;
+}
+
+.nav-right a:hover {
+    opacity: 1;
+}
+
+/* ================= SEARCH ================= */
+.search-form {
+    display: flex;
+    gap: 10px;
+    width: 380px;
+}
+
+.search-form input {
+    flex: 1;
+    padding: 10px 16px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+
+.search-form button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background: #1d1e20;
+    color: white;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background: #ffaa00;
+}
+
+/* ================= BUTTONS ================= */
+.add-btn,
+.btn-primary {
+    background: linear-gradient(90deg, #ffae00, #ff5f00);
+    border: none;
+    padding: 12px 26px;
+    border-radius: 12px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 12px 26px;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+}
+
+/* ================= HERO ================= */
+.hero {
+    text-align: center;
+    padding-top: 180px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.gradient {
+    background: linear-gradient(90deg, #ffaa00, #00ffd5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+      background-clip: text; 
+}
+
+.hero p {
+    margin-top: 20px;
+    font-size: 16px;
+    opacity: 0.7;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    margin-top: 35px;
+}
+
+/* ================= SECTIONS ================= */
+section {
+    margin-top: 100px;
+}
+
+/* ================= CARDS ================= */
+/* ================= FEATURE CARDS ================= */
+.card {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 18px;   /* 👈 THIS is the key change */
+    padding: 28px 24px;
+
+    min-height: 160px;     /* 👈 gives it a boxy feel */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: #ffaa00;
+}
+.card {
+    min-height: 180px;
+    border-radius: 16px;
+}
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
+    pointer-events: none;
+}
+
+
+/* ================= WHY EVENTLY ================= */
+.grid {
+    display: grid;
+    gap: 30px;
+}
+
+.card i.icon {
+    font-size: 26px;
+    color: #ffaa00;
+}
+
+/* ================= HOW IT WORKS ================= */
+.how-it-works {
+    margin-top: 120px;
+    text-align: center;
+}
+
+.how-it-works h2 {
+    font-size: 36px;
+    margin-bottom: 60px;
+}
+
+/* Steps container */
+.how-it-works .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Individual step */
+.how-it-works .step-box {
+    padding: 35px 28px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s ease;
+}
+
+.how-it-works .step-box:hover {
+    transform: translateY(-6px);
+    border-color: #ffaa00;
+}
+
+/* Step number */
+.how-it-works .step {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #ffae00, #ff5f00);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #000;
+    font-size: 18px;
+}
+
+/* Titles */
+.how-it-works h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Description */
+.how-it-works p {
+    font-size: 14px;
+    opacity: 0.7;
+    line-height: 1.6;
+}
+
+
+/* ================= FINAL CTA ================= */
+.final-cta {
+    margin: 120px auto 140px;
+    max-width: 900px;
+    padding: 70px 40px;
+    text-align: center;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.final-cta h2 {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.final-cta p {
+    opacity: 0.7;
+    margin-bottom: 30px;
+}
+
+
+/* ================= FOOTER ================= */
+.footer {
+    text-align: center;
+    padding: 25px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    margin-top: 80px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* ================= BLUR BACKGROUND ================= */
+.blur1,
+.blur2 {
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    filter: blur(140px);
+    z-index: -1;
+}
+
+.blur1 {
+    background: #ff9900;
+    top: 100px;
+    left: -120px;
+}
+
+.blur2 {
+    background: #00ffd5;
+    bottom: -120px;
+    right: -120px;
+}
+
+/* ================= SCROLL ANIMATION ================= */
+.scroll-fade {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s ease;
+}
+
+.scroll-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+    header {
+        padding: 16px 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .search-form {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+}
+
+.glass-box {
+    animation: fadeUp 1s ease forwards;
+}

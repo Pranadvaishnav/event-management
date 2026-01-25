@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Events Calendar</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/calender.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+  </head>
+
+  <body>
+    <div class="blur1"></div>
+    <div class="blur2"></div>
+
+    <header>
+      <div class="logo">My Events Calendar</div>
+      <button class="btn-primary" onclick="location.href = 'dashboard.html'">
+        Dashboard
+      </button>
+    </header>
+
+    <!-- FILTERS -->
+    <div class="filters">
+      <select id="filterCategory">
+        <option value="">All Categories</option>
+        <option value="Technical">Technical</option>
+        <option value="Cultural">Cultural</option>
+        <option value="Sports">Sports</option>
+      </select>
+
+      <select id="filterType">
+        <option value="">All Types</option>
+        <option value="created">Created</option>
+        <option value="registered">Registered</option>
+      </select>
+
+      <select id="filterTime">
+        <option value="">All</option>
+        <option value="upcoming">Upcoming</option>
+        <option value="past">Past</option>
+      </select>
+    </div>
+
+    <main class="main">
+      <!-- Analytics -->
+      <div class="stats-container">
+        <div class="stat-card">
+          <h3 id="totalEvents">0</h3>
+          <p>Total Events</p>
+        </div>
+
+        <div class="stat-card">
+          <h3 id="upcomingEvents">0</h3>
+          <p>Upcoming</p>
+        </div>
+
+        <div class="stat-card">
+          <h3 id="registeredEvents">0</h3>
+          <p>Registered</p>
+        </div>
+      </div>
+
+      <div id="calendar"></div>
+    </main>
+
+    <!-- Modal -->
+    <div id="eventModal" class="modal hidden">
+      <div class="modal-content">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDate"></p>
+        <p id="modalCategory"></p>
+        <p id="modalLocation"></p>
+        <p id="modalOrganizer"></p>
+        <p id="modalStatus"></p>
+        <p id="modalSeats"></p>
+
+        <div class="modal-buttons">
+          <button id="manageBtn" class="btn-primary modal-btn">Manage</button>
+          <button id="unregisterBtn" class="btn-danger modal-btn">
+            Unregister
+          </button>
+          <button id="closeModal" class="btn-secondary modal-btn">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/calender.js"></script>
+  </body>
+</html>

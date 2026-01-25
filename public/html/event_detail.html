@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Event Details</title>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/detail.css">
+</head>
+
+<body>
+
+<!-- ================= BLUR BACKGROUND ================= -->
+<div class="blur1"></div>
+<div class="blur2"></div>
+
+<!-- ================= HEADER ================= -->
+<header>
+    <div class="logo">HR Events</div>
+
+    <button class="add-btn">
+        For Business
+    </button>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+    <h1 class="gradient" id="eventTitle"></h1>
+<p id="eventSubtitle"></p>
+</section>
+
+<!-- ================= CONTENT ================= -->
+<section class="container">
+    <div class="content-grid">
+
+        <!-- Main Content -->
+        <div class="glass-box">
+            <h2>About This Event</h2>
+            <p id="eventDescription"></p>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="glass-box sidebar">
+    <h3>Event Summary</h3>
+
+    <ul>
+        <li><strong>Category:</strong> <span id="summaryCategory"></span></li>
+        <li><strong>Location:</strong> <span id="summaryLocation"></span></li>
+        <li><strong>Date:</strong> <span id="summaryDate"></span></li>
+        <li><strong>Created By:</strong> <span id="summaryCreator"></span></li>
+    </ul>
+
+    <p id="summaryDescription" style="font-size:14px; opacity:0.7;"></p>
+
+    <div class="glass-box" style="margin-top:30px;">
+    <h3>Register for this Event</h3>
+
+    <form id="registrationForm">
+        <p>NAME:</p>
+        <input type="text" id="participantName" placeholder="Full Name" required class="in" ><br><br>
+        <p>EMAIL-ADDRESS:</p>
+        <input type="email" id="participantEmail" placeholder="Email Address" required class="in"><br><br>
+
+        <button class="btn-primary" type="submit">
+            Register
+        </button>
+    </form>
+
+    <p id="registrationMessage" style="margin-top:10px;"></p>
+</div>
+</aside>
+
+    </div>
+    <button class="btn-primary" onclick="location.href='event_listing.html'">Back to Events</button>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    © 2026 Event Management Platform
+</footer>
+<script src="../js/detail.js"></script>
+</body>
+</html>

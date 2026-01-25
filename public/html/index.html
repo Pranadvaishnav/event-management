@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HOMEPAGE</title>
+
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="blur1"></div>
+<div class="blur2"></div>
+
+
+<header>
+    <div class="logo">HOME</div>
+    <div>
+    <form class="search-form">
+        <input type="search" placeholder="Search Events">
+        <button type="submit">Search</button>
+    </form>
+    </div>
+
+        <nav>
+    <div class="nav-right">
+        <a href="#">FAQs</a>
+        <a href="#">About us</a>
+        <a href="#">Need Help?</a>
+        <button class="add-btn" onclick="location.href='login.html'">Login / SignUp</button>
+    </div>
+</nav>
+
+</header>
+
+<section class="hero">
+    <h1>EVENT MANAGEMENT</h1>
+    <h1 class="gradient">Manage Everything Smoothly</h1>
+    <p>Evently helps you create, manage, and analyze events effortlessly — all from one clean dashboard.</p>
+
+    <div class="hero-buttons">
+        <button class="btn-primary" onclick="location.href='Dashboard.html'">User Dashboard</button>
+        <button class="btn-secondary">Registor Your Event</button>
+    </div>
+
+<!-- ================= WHY EVENTLY ================= -->
+<section class="px-6 py-28 scroll-fade">
+  <div class="max-w-6xl mx-auto">
+
+    <h2 class="text-3xl font-semibold text-center mb-12">
+      Why Evently?
+    </h2>
+    <br><br>
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+      <div class="card p-6">
+        <i data-lucide="calendar" class="icon"></i>
+        <h3 class="font-semibold text-lg mt-4">Simple Event Creation</h3>
+        <p class="text-sm text-muted mt-2">
+          Create and publish events in minutes with a distraction-free flow.
+        </p>
+      </div>
+
+      <div class="card p-6">
+        <i data-lucide="users" class="icon"></i>
+        <h3 class="font-semibold text-lg mt-4">Attendee Management</h3>
+        <p class="text-sm text-muted mt-2">
+          Track registrations, check-ins, and participation easily.
+        </p>
+      </div>
+
+      <div class="card p-6">
+        <i data-lucide="bar-chart-3" class="icon"></i>
+        <h3 class="font-semibold text-lg mt-4">Real-time Insights</h3>
+        <p class="text-sm text-muted mt-2">
+          Analyze attendance and performance instantly.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="how-it-works scroll-fade">
+  <h2>How it works</h2>
+
+  <div class="steps">
+    <div class="step-box">
+      <div class="step">1</div>
+      <h3>Create Event</h3>
+      <p>Add event details and publish instantly.</p>
+    </div>
+
+    <div class="step-box">
+      <div class="step">2</div>
+      <h3>Manage Attendees</h3>
+      <p>Share links and manage registrations.</p>
+    </div>
+
+    <div class="step-box">
+      <div class="step">3</div>
+      <h3>Track Performance</h3>
+      <p>Monitor engagement from your dashboard.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= FINAL CTA ================= -->
+<section class="final-cta scroll-fade">
+  <div class="max-w-4xl mx-auto text-center border border-gray-200 rounded-xl p-12">
+
+    <h2 class="text-3xl font-semibold mb-4">
+      Ready to manage events better?
+    </h2>
+
+    <p class="text-muted mb-8">
+      Start organizing with clarity, not complexity.
+    </p>
+
+    <a href="login.html" class="btn btn-primary px-8 py-3">
+      Get Started
+    </a>
+
+  </div>
+</section>
+
+
+<!-- ================= ICONS ================= -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>lucide.createIcons();</script>
+
+<!-- ================= SCROLL ANIMATION ================= -->
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add("visible");
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll(".scroll-fade").forEach(el => observer.observe(el));
+</script>
+
+<!-- ================= THEME TOGGLE ================= -->
+<script>
+  const html = document.documentElement;
+  const toggle = document.getElementById("themeToggle");
+
+  function updateIcon() {
+    toggle.textContent = html.classList.contains("dark") ? "🌙" : "☀️";
+  }
+
+  if (localStorage.theme === "dark") html.classList.add("dark");
+  updateIcon();
+
+  toggle.onclick = () => {
+    html.classList.toggle("dark");
+    localStorage.theme = html.classList.contains("dark") ? "dark" : "light";
+    updateIcon();
+  };
+</script>
+</section>
+<footer class="footer">
+    <p>&copy; 2026 Event Management. All rights reserved.</p>
+</footer>
+<script src="js/index.js"></script>
+</body>
+</html>

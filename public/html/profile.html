@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | Event Management</title>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/profile.css">
+</head>
+
+<body>
+
+<div class="blur1"></div>
+<div class="blur2"></div>
+
+<!-- ================= HEADER ================= -->
+<header>
+    <div class="logo">Event Management</div>
+    <button class="add-btn" onclick="location.href='index.html'">Logout</button>
+</header>
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar">
+    <h2>Menu</h2>
+    <ul>
+        <li  onclick="location.href='dashboard.html'">
+            🏠 Dashboard
+        </li>
+
+        <li onclick="location.href='create.html'">
+            ➕ Create Event
+        </li>
+
+        <li onclick="location.href='my_events.html'">
+            📂 My Events
+        </li>
+        <li onclick="location.href = 'calender.html'">
+            🗓️ Calendar
+        </li>
+        <li onclick="location.href='event_listing.html'">
+            🌍 All Events
+        </li>
+
+        <li onclick="location.href='notification.html'">
+            🔔 Notifications
+        </li>
+
+        <li onclick="location.href='profile.html'">
+            👤 Profile
+        </li>
+
+        <li onclick="location.href='index.html'">
+            🚪 Logout
+        </li>
+    </ul>
+</aside>
+
+<!-- ================= MAIN ================= -->
+<main class="main">
+
+    <!-- Profile Header -->
+    <section class="profile-header">
+        <div>
+            <span id="headerName" >Harsh Raj</span><br>
+            <span id="headerEmail">harshraj@email.com</span>
+        </div>
+        <div class="role-badge">User</div>
+    </section>
+
+    <!-- Profile Details -->
+     
+    <section class="card-box">
+        <h3>Profile Information</h3>
+
+        <div class="form-grid">
+            <div>
+                <label>Full Name</label>
+                <input type="text" id="nameInput" placeholder="Enter name">
+            </div>
+
+            <div>
+                <label>Email Address</label>
+                <input type="email" id="emailInput" placeholder="Enter email">
+            </div>
+
+            <div>
+                <label>Phone Number</label>
+                <input type="text" placeholder="+91 XXXXX XXXXX">
+            </div>
+
+            <div>
+                <label>Account Role</label>
+                <input type="text" value="User" disabled>
+            </div>
+        </div>
+
+        <button class="btn-primary">Update</button>
+    </section>
+
+    <!-- My Events Summary -->
+    <section class="card-box">
+        <h3>My Events Summary</h3>
+
+        <div class="stats-row">
+            <div>
+                <span>12</span>
+                <small>Events Joined</small>
+            </div>
+            <div>
+                <span>3</span>
+                <small>Events Created</small>
+            </div>
+            <div>
+                <span>2</span>
+                <small>Upcoming</small>
+            </div>
+        </div>
+    </section>
+
+</main>
+<script>
+    const currentPage = window.location.pathname.split("/").pop();
+    document.querySelectorAll(".sidebar li").forEach(li => {
+        if (li.getAttribute("onclick")?.includes(currentPage)) {
+            li.classList.add("active");
+        }
+    });
+</script>
+<script src="../js/profile.js"></script>
+</body>
+</html>

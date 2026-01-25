@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up | Event Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS (same as login) -->
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+
+<body>
+
+<!-- ================= BLUR BACKGROUND ================= -->
+<div class="blur1"></div>
+<div class="blur2"></div>
+
+<!-- ================= AUTH ================= -->
+<div class="auth-container">
+    <div class="auth-card">
+        <h2 class="gradient">Create Account</h2>
+        <p>Join us and explore amazing events</p>
+
+        <form onsubmit="registerUser(event)">
+            <input type="text" id="name" placeholder="Full name" required>
+            <input type="email" id="email" placeholder="Email address" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="password" id="confirm-password" placeholder="Confirm password" required>
+
+            <button type="submit">
+                Sign Up
+            </button>
+            <p id="error-message" style="color: #ff6b6b; margin-top: 10px; text-align: center; font-size: 0.9rem; font-weight: 500;"></p>
+        </form>
+
+        <span class="switch">
+            Already have an account?
+            <a href="login.html">Login</a>
+        </span>
+    </div>
+</div>
+
+<script src="../js/signup.js"></script>
+</body>
+</html>

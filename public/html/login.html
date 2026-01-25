@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login | Event Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+
+<body>
+
+<!-- ================= BLUR BACKGROUND ================= -->
+<div class="blur1"></div>
+<div class="blur2"></div>
+
+<!-- ================= AUTH ================= -->
+<div class="auth-container">
+    <div class="auth-card">
+        <h2 class="gradient">Welcome Back</h2>
+        <p>Please login to your account</p>
+
+        <!-- LOGIN FORM -->
+        <form onsubmit="loginUser(event)">
+            <input type="email" 
+                   id="email" 
+                   placeholder="Email address" 
+                   required>
+
+            <input type="password" 
+                   id="password" 
+                   placeholder="Password" 
+                   required>
+
+            <button type="submit">
+                Login
+            </button>
+        </form>
+
+        <!-- ERROR MESSAGE -->
+        <p id="error-message" style="color: red; margin-top: 10px;"></p>
+
+        <span class="switch">
+            Don’t have an account?
+            <a href="signup.html">Sign up</a>
+        </span>
+    </div>
+</div>
+
+<!-- CONNECT JAVASCRIPT -->
+<script src="../js/index.js"></script>
+
+</body>
+</html>
