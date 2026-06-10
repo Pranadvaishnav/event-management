@@ -6,7 +6,7 @@ pipeline {
         IMAGE_TAG = 'latest'
         PORT = '4242'
         // host.docker.internal resolves to the host's loopback interface from inside a container
-        MONGO_URI = 'mongodb://host.docker.internal:27017/event'
+        MONGO_URI = 'mongodb+srv://kazeno1stigma_db_user:MtCXM0atFNbgWjIx@cluster0.sgggplk.mongodb.net/event?retryWrites=true&w=majority'
     }
 
     stages {
