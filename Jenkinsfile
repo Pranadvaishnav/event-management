@@ -36,6 +36,7 @@ pipeline {
         }
     }
 }
+}
     post {
         success {
             echo "CI/CD Pipeline succeeded. Application is running on port ${PORT}!"
